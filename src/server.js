@@ -11,7 +11,9 @@ const dbPromise = open({
     driver: sqlite3.Database
 })
 
-
+app.get('/', (req, res) => {
+    res.send('Welcome.')
+})
 app.use('/api/v1/greenhouse_gas_inventory', listRouter)
 
 app.listen(port, () => {
